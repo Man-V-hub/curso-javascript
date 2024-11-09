@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Home from './Home'; // Importa la nueva pantalla
+import Home from './Home'; 
 
 const Stack = createNativeStackNavigator();
 
