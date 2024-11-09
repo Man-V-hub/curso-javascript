@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function App() {
@@ -10,6 +10,7 @@ export default function App() {
       start={{ x: 0, y: 0 }}
       end={{ x: 0, y: 1 }}
     >
+      <Image source={require('./assets/LOGO ORIGINAL TRANSPARENCIA.png')} style={styles.logo} />
       <Text style={styles.customText}>Primer mensaje en una app y con un fondo degradado.</Text>
       <StatusBar style="auto" />
     </LinearGradient>
@@ -26,5 +27,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: '600',
     color: 'green',
+  },
+  logo: {
+    width: 100,
+    height: 100,
+    marginBottom: 20,
   },
 });
