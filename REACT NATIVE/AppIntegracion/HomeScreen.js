@@ -8,7 +8,7 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>¡Bienvenido/a al Home!</Text>
+      <Text style={styles.text}>¡Bienvenid@ al Home!</Text>
     </View>
   );
 }
