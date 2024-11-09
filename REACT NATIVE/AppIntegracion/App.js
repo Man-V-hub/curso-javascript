@@ -18,16 +18,16 @@ export default function App() {
 
   return (
     <LinearGradient
-      colors={['rgba(34,193,195,1)', 'rgba(253,187,45,1)']}
+      colors={['rgba(139,67,201,1)', 'rgba(255,149,0,1)']}
       style={styles.container}
       start={{ x: 0, y: 0 }}
-      end={{ x: 1, y: 1 }}
+      end={{ x: 0, y: 1 }}
     >
       <View style={styles.imageContainer}>
         <Image source={require('./assets/LOGO ORIGINAL TRANSPARENCIA.png')} style={styles.logo} />
       </View>
       <View style={styles.textContainer}>
-        <Text style={styles.customText}>Primer mensaje en una app y con un fondo degradado.</Text>
+        <Text style={styles.customText}>Municipalidad de Quinchao</Text>
       </View>
       <View style={styles.buttonsContainer}>
         <Button title="PULSA AQUI" onPress={showAlert1} />
