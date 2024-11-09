@@ -2,8 +2,13 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Button, Alert, TouchableHighlight, Pressable } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons'; // Asegúrate de tener @expo/vector-icons instalado
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Home from './Home'; // Importa la nueva pantalla
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+function HomeScreen({ navigation }) {
   const showAlert1 = () => {
     Alert.alert('Alerta', 'Este es el mensaje del primer botón.');
   };
@@ -38,9 +43,21 @@ export default function App() {
           <Ionicons name="logo-google" size={24} color="white" />
           <Text style={styles.buttonText}>ENVIAR</Text>
         </Pressable>
+        <Button title="Ir al Home" onPress={() => navigation.navigate('Home')} />
       </View>
       <StatusBar style="auto" />
     </LinearGradient>
+  );
+}
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="HomeScreen">
+        <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ title: 'Inicio' }} />
+        <Stack.Screen name="Home" component={Home} options={{ title: 'Home' }} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
