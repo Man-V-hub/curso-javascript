@@ -5,7 +5,7 @@ import { View, Text, StyleSheet } from 'react-native';
 export default function Home() {
   return (
     <View style={styles.container}>
-      <Text style={styles.welcomeText}>¡Bienvenido/a al Home!</Text>
+      <Text style={styles.welcomeText}>¡Bienvenido al Home!</Text>
     </View>
   );
 }
