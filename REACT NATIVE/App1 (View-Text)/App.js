@@ -10,7 +10,7 @@ export default function App() {
       start={{ x: 0, y: 0 }}
       end={{ x: 0, y: 1 }}
     >
-      <Text>Primer mensaje en una app y con un fondo degradado.</Text>
+      <Text style={styles.customText}>Primer mensaje en una app y con un fondo degradado.</Text>
       <StatusBar style="auto" />
     </LinearGradient>
   );
@@ -21,5 +21,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  customText: {
+    fontSize: 20,
+    fontWeight: '600',
+    color: 'green',
   },
 });
