@@ -32,7 +32,7 @@ function MainScreen({ navigation }) {
         <Image source={require('./assets/LOGO ORIGINAL TRANSPARENCIA.png')} style={styles.logo} />
       </View>
       <View style={styles.textContainer}>
-        <Text style={styles.customText}>Primer mensaje en una app y con un fondo degradado.</Text>
+        <Text style={styles.customText}>Municipalidad de Quinchao</Text>
       </View>
       <View style={styles.buttonsContainer}>
         <Button title="PULSA AQUI" onPress={showAlert1} />
@@ -43,7 +43,7 @@ function MainScreen({ navigation }) {
           <Ionicons name="logo-google" size={24} color="white" />
           <Text style={styles.buttonText}>ENVIAR</Text>
         </Pressable>
-        <Button title="Ir al Home" onPress={() => navigation.navigate('Home')} />
+        <Button title="Iniciar Sesión" onPress={() => navigation.navigate('Home')} style={styles.loginButton} />
       </View>
       <StatusBar style="auto" />
     </LinearGradient>
@@ -102,5 +102,8 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'white',
     marginLeft: 10,
+  },
+  loginButton: {
+    marginTop: 20, 
   },
 });
