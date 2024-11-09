@@ -2,8 +2,13 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Button, Alert, TouchableHighlight, Pressable } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons'; // Asegúrate de tener @expo/vector-icons instalado
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from './HomeScreen'; // Asegúrate de crear este archivo
 
-export default function App() {
+const Stack = createStackNavigator();
+
+function MainScreen({ navigation }) {
   const showAlert1 = () => {
     Alert.alert('Alerta', 'Este es el mensaje del primer botón.');
   };
@@ -27,7 +32,7 @@ export default function App() {
         <Image source={require('./assets/LOGO ORIGINAL TRANSPARENCIA.png')} style={styles.logo} />
       </View>
       <View style={styles.textContainer}>
-        <Text style={styles.customText}>Municipalidad de Quinchao</Text>
+        <Text style={styles.customText}>Primer mensaje en una app y con un fondo degradado.</Text>
       </View>
       <View style={styles.buttonsContainer}>
         <Button title="PULSA AQUI" onPress={showAlert1} />
@@ -38,9 +43,21 @@ export default function App() {
           <Ionicons name="logo-google" size={24} color="white" />
           <Text style={styles.buttonText}>ENVIAR</Text>
         </Pressable>
+        <Button title="Ir al Home" onPress={() => navigation.navigate('Home')} />
       </View>
       <StatusBar style="auto" />
     </LinearGradient>
+  );
+}
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Main">
+        <Stack.Screen name="Main" component={MainScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
