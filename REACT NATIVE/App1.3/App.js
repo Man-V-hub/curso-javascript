@@ -4,12 +4,16 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons'; // Asegúrate de tener @expo/vector-icons instalado
 
 export default function App() {
-  const showAlert = () => {
-    Alert.alert('Alerta', 'Este es un mensaje de alerta.');
+  const showAlert1 = () => {
+    Alert.alert('Alerta', 'Este es el mensaje del primer botón.');
   };
 
-  const showCustomAlert = () => {
-    Alert.alert('Alerta Personalizada', 'Este es un mensaje de alerta personalizada.');
+  const showAlert2 = () => {
+    Alert.alert('Alerta Personalizada', 'Este es el mensaje del segundo botón.');
+  };
+
+  const showAlert3 = () => {
+    Alert.alert('Alerta con Icono', 'Este es el mensaje del tercer botón.');
   };
 
   return (
@@ -19,16 +23,22 @@ export default function App() {
       start={{ x: 0, y: 0 }}
       end={{ x: 0, y: 1 }}
     >
-      <Image source={require('./assets/LOGO ORIGINAL TRANSPARENCIA.png')} style={styles.logo} />
-      <Text style={styles.customText}>Primer mensaje en una app y con un fondo degradado.</Text>
-      <Button title="Mostrar Alerta" onPress={showAlert} />
-      <TouchableHighlight style={styles.customButton} onPress={showCustomAlert}>
-        <Text style={styles.buttonText}>Botón Personalizado</Text>
-      </TouchableHighlight>
-      <Pressable style={styles.pressableButton} onPress={showCustomAlert}>
-        <Ionicons name="logo-google" size={24} color="white" />
-        <Text style={styles.buttonText}>Botón con Icono</Text>
-      </Pressable>
+      <View style={styles.imageContainer}>
+        <Image source={require('./assets/LOGO ORIGINAL TRANSPARENCIA.png')} style={styles.logo} />
+      </View>
+      <View style={styles.textContainer}>
+        <Text style={styles.customText}>Primer mensaje en una app y con un fondo degradado.</Text>
+      </View>
+      <View style={styles.buttonsContainer}>
+        <Button title="PULSA AQUI" onPress={showAlert1} />
+        <TouchableHighlight style={styles.customButton} onPress={showAlert2}>
+          <Text style={styles.buttonText}>PRESIONA AQUI</Text>
+        </TouchableHighlight>
+        <Pressable style={styles.pressableButton} onPress={showAlert3}>
+          <Ionicons name="logo-google" size={24} color="white" />
+          <Text style={styles.buttonText}>ENVIAR</Text>
+        </Pressable>
+      </View>
       <StatusBar style="auto" />
     </LinearGradient>
   );
@@ -40,6 +50,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  imageContainer: {
+    marginBottom: 20,
+  },
+  textContainer: {
+    marginBottom: 20,
+  },
+  buttonsContainer: {
+    alignItems: 'center',
+  },
   customText: {
     fontSize: 20,
     fontWeight: '600',
@@ -47,8 +66,7 @@ const styles = StyleSheet.create({
   },
   logo: {
     width: 100,
-    height: 100,
-    marginBottom: 20,
+    height: 110,
   },
   customButton: {
     backgroundColor: '#2196F3',
