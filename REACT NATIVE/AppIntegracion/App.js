@@ -18,10 +18,10 @@ export default function App() {
 
   return (
     <LinearGradient
-      colors={['rgba(131,58,180,1)', 'rgba(253,29,29,1)', 'rgba(252,176,69,1)']}
+      colors={['rgba(34,193,195,1)', 'rgba(253,187,45,1)']}
       style={styles.container}
       start={{ x: 0, y: 0 }}
-      end={{ x: 0, y: 1 }}
+      end={{ x: 1, y: 1 }}
     >
       <View style={styles.imageContainer}>
         <Image source={require('./assets/LOGO ORIGINAL TRANSPARENCIA.png')} style={styles.logo} />
