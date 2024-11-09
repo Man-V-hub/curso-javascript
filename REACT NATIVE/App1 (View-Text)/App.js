@@ -10,7 +10,7 @@ export default function App() {
       start={{ x: 0, y: 0 }}
       end={{ x: 0, y: 1 }}
     >
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>Primer mensaje en una app y con un fondo degradado.</Text>
       <StatusBar style="auto" />
     </LinearGradient>
   );
