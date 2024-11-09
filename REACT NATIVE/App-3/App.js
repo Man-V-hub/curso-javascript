@@ -4,23 +4,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { FontAwesome } from '@expo/vector-icons'; // Importa FontAwesome
 
-// Crear las pantallas
-function HomeScreen() {
-  return (
-    <View style={styles.screen}>
-      <Text style={styles.title}>Home</Text>
-    </View>
-  );
-}
+// Importa las pantallas separadas
+import HomeScreen from './HomeScreen';
+import SettingsScreen from './SettingsScreen';
 
-function SettingsScreen() {
-  return (
-    <View style={styles.screen}>
-      <Text style={styles.title}>Settings</Text>
-    </View>
-  );
-}
-
+// Crear el stack de navegación
 const Stack = createStackNavigator();
 
 export default function App() {
